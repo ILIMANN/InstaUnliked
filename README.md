@@ -4,8 +4,8 @@ A lightweight, background-running Python automation script that uses Playwright 
 
 ## How to use?
 
-- Firstly, run the setup file to install required libraries. This will also lead you to the Instagram log in page, log in to your account. This will save your log in cookie *(in a .json file)*.
-- Follow the further instructions that show up in your terminal. Later on run the *unliker_bot.py* and watch the magic happen!
+- Firstly, run the setup file to install required libraries. This will also lead you to the Instagram log in page, log in to your account. This will save your log in cookie _(in a .json file)_.
+- Follow the further instructions that show up in your terminal. Later on run the _process.bat_ and watch the magic happen!
 
 ## Features
 
