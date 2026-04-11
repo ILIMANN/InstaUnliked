@@ -4,13 +4,13 @@ A lightweight, background-running Python automation script that uses Playwright 
 
 ## How to use?
 
-- Firstly run the *save_cookies.py* file and enter your Instagram account. Follow the further instructions that show up in your terminal. Later on run the *unliker_bot.py* and thats all!
+- Firstly, run the setup file to install required libraries.
+- Run the save_cookies.py file and enter your Instagram account. This will save your log in cookie *(in a .json file)* and save time. Follow the further instructions that show up in your terminal. Later on run the unliker_bot.py and thats all!
 
 ## Features
 
-- **Headless Execution:** Runs silently in the background without taking over your mouse or screen.
+- **Headless Execution:** Runs silently in the background without taking over your mouse or screen. If you want to see the code in action in line 8, change "headless=True" to "headless=False".
 
 ## Prerequisites
 
-- Python 3.x installed
-- Git installed
+- Python 3.x installed with pip
