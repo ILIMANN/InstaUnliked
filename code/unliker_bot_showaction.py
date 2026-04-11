@@ -5,7 +5,7 @@ import json
 def generate_session():
     with sync_playwright() as p:
         
-        browser = p.chromium.launch(headless=True)
+        browser = p.chromium.launch(headless=False)
         context = browser.new_context()
         page = context.new_page()
         
@@ -53,7 +53,7 @@ def generate_session():
         print("Progress Done!")        
         
         browser.close()
-        p.stop()
+        
 
 if __name__ == "__main__":
     generate_session()

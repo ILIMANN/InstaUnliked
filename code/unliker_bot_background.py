@@ -1,11 +1,12 @@
 from playwright.sync_api import sync_playwright
 import json
+import traceback
 
 
 def generate_session():
     with sync_playwright() as p:
         
-        browser = p.chromium.launch(headless=False)
+        browser = p.chromium.launch(headless=True)
         context = browser.new_context()
         page = context.new_page()
         
@@ -16,7 +17,18 @@ def generate_session():
         context.add_cookies(cookies)
 
         print("Navigating to Instagram...")
-        page.goto("https://www.instagram.com/your_activity/interactions/likes/")
+        try:
+            page.goto("https://www.instagram.com/your_activity/interactions/likes/")
+        except Exception as e:
+            print("There is a problem with cookies!")
+            traceback.print_exc()
+            input("Press Enter to exit...")
+        
+        if not page.url == "https://www.instagram.com/your_activity/interactions/likes/":
+            print("There is a problem with cookies!")
+            input("Press Enter to exit...")
+            browser.close()
+            
         
         isCompleted = False
         while(True):
@@ -50,10 +62,11 @@ def generate_session():
         
         
         print("=================================================================")
-        print("Progress Done!")        
+        print("Progress Done!")
+        input("Press Enter to exit...")  
         
         browser.close()
-        p.stop()
+        
 
 if __name__ == "__main__":
     generate_session()

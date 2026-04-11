@@ -1,2 +1,3 @@
 *.json
 *.txt
+.setup_done
